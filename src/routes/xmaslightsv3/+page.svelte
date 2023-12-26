@@ -1,6 +1,6 @@
 <h1>3D animācijas uz eglītes lampiņām</h1>
 
-<p>Jau 3 gadus ziemassvētku tuvošanās man nozīmē lielu ņemšanos ar eglītes lampiņām. Ideju nospēru no angļu matemātikas
+<p>Jau 3 gadus ziemassvētku tuvošanās man nozīmē lielu ņemšanos ar eglītes lampiņām. Ideju paņēmu no angļu matemātikas
     jūtūbera <a href="https://www.youtube.com/watch?v=TvlpIojusBE">Stand up maths</a> un pievienoju šo to jaunu.</p>
 <p>Visa būtība slēpjās principā, ka katrai lampiņai uz eglītes tiek noteiktas koordinātas 3D telpā. Tas paver iespēju uz
     lampiņām
@@ -64,13 +64,21 @@
 <img src="/assets/xmaslights/calibration.jpg" alt="">
 <p class="img-caption">Koordinātu noteikšanas process vienai no horizontālajām asīm.</p>
 <img src="/assets/xmaslights/screen.jpg" alt="">
-<p class="img-caption">Kamera atrodās vienā punkā ar lampiņu, kad tā atrodās kameras kadra centrā. Šīs līnijas uzzīmēt programmatūrā būtu smukāk, bet ir citas prioritātes</p>
+<p class="img-caption">Kamera atrodās vienā punkā ar lampiņu, kad tā atrodās kameras kadra centrā. Šīs līnijas uzzīmēt
+    programmatūrā būtu smukāk, bet ir citas prioritātes</p>
 
 <h2>Lampiņu vadība</h2>
-<p>Par iepriekšējām versijām nav naudz ko stāstīt. Lampiņas bija pieslēgtas pie raspberry pi minidatora, kur python
-    skripti atskaņoja animācijas.</p>
+<h3>2021 v2</h3>
+<video src="/assets/xmaslights/unity.mp4" autoplay loop controls></video>
+<p>Lampiņu 3D reprezentāciju uzbūvēju Unity'ā. Tad katra lampiņa pārbauda, vai sadurās ar kādu objektu, krāsu paņemot no
+    attiecīgā objekta materiāla.</p>
+<img src="/assets/xmaslights/unity.png" alt="">
+<p>Dati par animāciju no Unity'a reāllaikā tiek nosūtīti Raspberry Pi minidatoram caur SocketIO</p>
 
-<p>Lielākais iemesls sarežģījumiem programmatūrā bija vēlme pēc vizualizācijas, kas sinhronizējās ar īsto eglīti. Šim
+<h3>2023 v2</h3>
+
+<p>Lielākais iemesls sarežģījumiem šī gada programmatūrā bija vēlme pēc vizualizācijas, kas sinhronizējās ar īsto
+    eglīti. Šim
     nolūkam nepieciešams animācijas darbināt divās vietās vienlaicīgi - uz lampiņu kontroliera un vizualizācijā.
     Sākotnējais plāns bija rakstīt animācijas rust'ā un tad kompilēt priekš raspberry'a un WebAssembly, kas darbotos
     vizualizētājā. Šis plāns atcēlās, nu jau neatceros, kāpēc.</p>
@@ -82,7 +90,7 @@
 <p class="img-caption">Kopējās programmatūras shēma</p>
 
 <p>Kontroles web lapa nosūta pieprasījumu serverim ģenerēt animāciju. Ja šāds pieprasījums jau nav kešā, tad
-    peiprasījums tiek nodots rust programmai, kas atgriež animācijas kadrus. Tad Node serveris šos datus, caur Socket.io
+    pieprasījums tiek nodots rust programmai, kas atgriež animācijas kadrus. Tad Node serveris šos datus, caur Socket.io
     nosūta vizualizācijai un lampiņu kontrolierim.</p>
 
 <p>Katra animācija definē krāsas, ko izmanto ģenerators. Šīs krāsas var mainīt kontroles web lapā. Krāsas var izteikt
@@ -92,3 +100,7 @@
     ir iekrāsot lampiņas atkarībā no to koordinātām. Šajās izteiksmēs, kā mainīgos var ierakstīt lampiņas koordinātu uz
     konkrētas ass, kas arī ir intervālā 0-100. Šo izteiksmju parsošanai sākotnēji gribēju izmantot <a href="">priedi</a>,
     bet tā bija stipri par lēnu.</p>
+<p>Bija kaudze ar problēmām, kad īsto versiju centos palaist skolā. Pirmkārt, tāpēc, ka sākumā Raspberry's nevarēja
+    noķert stabilu WiFi tīklu. Tad vēl Python skripts, kas kontrolē lampiņas nestrādāja īsti pareizi, tāpēc pēdējā brīdī
+    pārrakstīju kontrolieri ar NodeJs un nokopēju kodu, kas vizualizētājā saņem un apstrādā animācijas datus no
+    servera.</p>

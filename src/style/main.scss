@@ -23,6 +23,8 @@ html, body{
     }
   }
   main{
+    display: flex;
+    flex-direction: column;
     video{
       width: 100%;
     }
@@ -48,7 +50,9 @@ html, body{
       }
     }
     img{
-      width: 100%;
+      max-width: 100%;
+      max-height: 100vh;
+      margin: auto;
     }
     .img-caption{
       font-family: 'Roboto', sans-serif;
