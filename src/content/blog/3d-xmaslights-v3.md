@@ -19,7 +19,7 @@ Visa būtība slēpjās principā, ka katrai lampiņai uz eglītes tiek noteikta
 
 ### 2021 v1
 
-<video autoplay loop muted="muted"  controls plays-inline="true" class="border border-skin-line"
+<video loop muted="muted"  controls plays-inline="true" class="border border-skin-line"
 src="/assets/xmaslights/v0.5.mp4">
 </video>
 
@@ -64,7 +64,7 @@ Tāpēc perspektīva var nobīdīt mērījumus.
 Divas lampiņas, kas atrodās vienādā augstumā virs zemes var izskatīties dažādos augstumos no vidēja skatu punkta.
 
 Tāpēc šogad kustināsim pašu kameru.
-<video src="/assets/xmaslights/slide.mp4" autoplay loop controls alt="Kameras kustība"></video>
+<video src="/assets/xmaslights/slide.mp4" loop controls alt="Kameras kustība"></video>
 
 Pa koka brusu slīd kamera, kuras signāls iet uz ekrānu. Tiek iedegta viena
 lampiņa, kamera tiek bīdīta pa brusu līdz lampiņa atrodās kameras kadra centrā. Tad var apgalvot, ka kamera atrodās
@@ -87,13 +87,13 @@ programmatūrā būtu smukāk, bet ir citas prioritātes
 
 ### 2021 v2
 
-<video autoplay loop muted="muted"  controls plays-inline="true" class="border border-skin-line"
+<video loop muted="muted"  controls plays-inline="true" class="border border-skin-line"
 src="/assets/xmaslights/unity.mp4">
 </video>
 
 Lampiņu 3D reprezentāciju uzbūvēju Unity'ā. Tad katra lampiņa pārbauda, vai sadurās ar kādu objektu, krāsu paņemot no
 attiecīgā objekta materiāla.
-![Unity](/assets/xmaslights/unity.jpg)
+![Unity](/assets/xmaslights/unity.png)
 
 Dati par animāciju no Unity'a reāllaikā tiek nosūtīti Raspberry Pi minidatoram caur SocketIO
 
