@@ -81,7 +81,7 @@ ejot uz skolu, paslīdēju uz ielas un nolauzu kameru, tad skolā meklēju karst
 Koordinātu noteikšanas process vienai no horizontālajām asīm.
 ![](/assets/xmaslights/screen.jpg)
 Kamera atrodās vienā punkā ar lampiņu, kad tā atrodās kameras kadra centrā. Šīs līnijas uzzīmēt
-programmatūrā būtu smukāk, bet ir citas prioritātes
+programmatūrā būtu smukāk, bet ir citas prioritātes.
 
 ## Lampiņu vadība
 
@@ -102,19 +102,19 @@ Dati par animāciju no Unity'a reāllaikā tiek nosūtīti Raspberry Pi minidato
 Lielākais iemesls sarežģījumiem šī gada programmatūrā bija vēlme pēc vizualizācijas, kas sinhronizējās ar īsto
 eglīti. Šim
 nolūkam nepieciešams animācijas darbināt divās vietās vienlaicīgi - uz lampiņu kontroliera un vizualizācijā.
-Sākotnējais plāns bija rakstīt animācijas rust'ā un tad kompilēt priekš raspberry'a un WebAssembly, kas darbotos
-vizualizētājā. Šis plāns atcēlās, nu jau neatceros, kāpēc.
+Sākotnējais plāns bija rakstīt animācijas rust'ā un tad kompilēt tās priekš raspberry'a un WebAssembly, kas darbotos
+vizualizētājā, bet beigās sanāca vēl elegantāk.
 
 Jaunais plāns ir animācijas kadrus ģenerēt vienreiz, uz servera, un tad atskaņot vienlaicīgi uz kontroliera un
 JavaScript'ā. Tādejādi katra animācija nav jāpārraksta divreiz, kā arī nav jāsūta milzīgs datu apjoms starp
-abiem.
+abiem. Animācijas kadrs satur informāciju par to, kādām lampiņām būtu jāspīd kādā krāsā. Kadru daudzumu sekundē var noteikt kontroles lietotnē.
 
 ![Programmatūras shēma](/assets/xmaslights/scheme.png)
 
 Programmatūras shēma
 
 Kontroles web lapa nosūta pieprasījumu serverim ģenerēt animāciju. Ja šāds pieprasījums jau nav kešā, tad
-pieprasījums tiek nodots rust programmai, kas atgriež animācijas kadrus. Tad Node serveris šos datus, caur Socket.io
+pieprasījums tiek nodots rust serverim, kas atgriež animācijas kadrus. Tad Node serveris šos datus, caur Socket.io
 nosūta vizualizācijai un lampiņu kontrolierim.
 
 Katra animācija definē krāsas, ko izmanto ģenerators. Šīs krāsas var mainīt kontroles web lapā. Krāsas var izteikt

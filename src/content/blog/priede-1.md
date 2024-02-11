@@ -2,7 +2,7 @@
 author: Mārcis
 pubDatetime: 2024-01-04
 title: "Priedes Kompilatora pirmās stadijas"
-featured: true
+featured: false
 tags:
   - priede
 description: "Īstumā par to, kā Priede implementē kompilatora pirmās stadijas"
