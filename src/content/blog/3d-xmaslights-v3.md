@@ -24,22 +24,22 @@ src="/assets/xmaslights/v0.5.mp4">
 </video>
 
 Šis bija neliels eksperiments klases eglītē, kas koordinātu noteikšanas ziņā būtiski atšķirās no turpmākajiem
-variantiem tādā ziņā, ka koordinātas netika noteiktas,tika noteikta tikai lampiņu secība uz ass. Kārtošanas
+variantiem tādā ziņā, ka koordinātas netika noteiktas, tika noteikta tikai lampiņu secība uz ass. Kārtošanas
 algoritms
-iededz 2 lampiņas atšķirīgās krāsās un tad cilvēks nosakakura lampiņa ir tālāk uz ass. Neskatoties uz neatbilstību
+iededz 2 lampiņas atšķirīgās krāsās un tad cilvēks nosa, kakura lampiņa ir tālāk uz ass. Neskatoties uz neatbilstību
 virsrakstam,
-šī metode strādāja diezgan labi, lai gan sarežģītāmanimācijām tas nestrādātu,
-jo eglīte ir daudz augstāka par tās platumu, bet nosakottikai secību uz ass, mēs to nezinam, un ja šīs
+šī metode strādāja diezgan labi, lai gan sarežģītām animācijām tas nestrādātu,
+jo eglīte ir daudz augstāka par tās platumu, bet nosakot tikai secību uz ass, mēs to nezinam, un ja šīs
 pseido-koordinātas
-mēģinātu attēlot vizuāli tad iegūtu kubu, kura iekšienē irvienmērīgi izmētātas koordinātas.
+mēģinātu attēlot vizuāli tad iegūtu kubu, kura iekšienē ir vienmērīgi izmētātas koordinātas.
 
 ### 2021 v2
 
 Šoreiz tika noteiktas īstas koordinātas, uzņemot fotogrāfijas, kurā katrā ir ieslēga viena lampiņa, un tad par
 lampiņu
-koordinātām pieņemot iedegtās lampiņas atrašanās vietu uzfotogrāfijā, pikseļos. Parādijās problēma, kas sekos vēl
+koordinātām pieņemot iedegtās lampiņas atrašanās vietu fotogrāfijā, pikseļos. Parādijās problēma, kas sekos vēl
 ilgi - lampiņas
-nevar redzēt, jo priekšā ir egles zari. Daudzām lampiņāmtāpēc nevarēja koordinātas, bet pēc tam es tās iebīdīju
+nevar redzēt, jo priekšā ir egles zari. Daudzām lampiņām tāpēc nevarēja koordinātas, bet pēc tam es tās iebīdīju
 vietā
 'uz aci', balstoties uz blakus esošajām koordinātām.
 
