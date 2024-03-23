@@ -1,16 +1,16 @@
 ---
 author: Mārcis
 pubDatetime: 2024-01-04
-title: "Priedes Kompilatora pirmās stadijas"
+title: "Priedes interpretatora pirmās stadijas"
 featured: false
 tags:
   - priede
-description: "Īstumā par to, kā Priede implementē kompilatora pirmās stadijas"
+description: "Īstumā par to, kā Priede implementē interpretatora pirmās stadijas"
 ---
 
 Īsumā par to, kas notiek pašā sākumā, kad tiek kompilēts vai interpretēts kods, specifiski runājot par [Priedi](https://github.com/MarcisAn/priede):
 
-Programmēšanas valodu implementācijas lielākoties daļās divās daļās: interpretatori un kompilatori. Tie atšķirās ar to, kā tiek izpildīts kods, savukārt pirmās izpildes stadijas abiem ir vienādas un par to arī turpmākais raksts. Šis viss nav nekas jauns un pēc tādiem principiem darbojās absolūts vairums kompilatoru un interpretatoru pasaulē.
+Programmēšanas valodu implementācijas lielākoties daļās divās daļās: interpretatori un kompilatori. Tie atšķirās ar to, kā tiek izpildīts kods, savukārt pirmās izpildes stadijas abiem ir vienādas un par to arī turpmākais raksts. Pēc šādiem principiem darbojās absolūts vairums kompilatoru un interpretatoru pasaulē. Šī noteikti nav pamācība, bet varu ieteikt e-grāmatu ["Crafting Interpreters"](https://craftinginterpreters.com/contents.html)
 
 ## Satura rādītājs
 
@@ -26,7 +26,7 @@ Pirms ķerties klāt kodam, varētu paskatīties uz matemātiskām izteiksmēm, 
 
 ![Matemātiskās izteiksmes ASK](/assets/priede-1/ast-1.jpg)
 
-Šo grafiku sauc par Abstraktās Sintakses Koku un tas tiek ģenerēts, lai tiktu vaļā no cilvēka rakstītā koda. Tam nosaukums dots tāds, jo tas ir neatkarīgs no programmēšanas valodas sintakses(pieraksta veida). Divas valodas ar atšķirīgiem instrukciju pierakstiem ģenerēs vienādus abstraktās sintakses kokus. Varētu teikt, ka kompilatora uzdevums ir likt datoram saprast instrukcijas, ko ir rakstījis cilvēks un šis ir pirmais posms tajā procesā.
+Šo grafiku sauc par Abstraktās Sintakses Koku un tas tiek ģenerēts, lai tiktu vaļā no cilvēka rakstītā, koda. Tam nosaukums dots tāds, jo tas ir neatkarīgs no programmēšanas valodas sintakses(pieraksta veida). Divas valodas ar atšķirīgiem instrukciju pierakstiem ģenerēs vienādus abstraktās sintakses kokus. Kompilatora uzdevums ir likt datoram saprast instrukcijas, ko ir rakstījis cilvēks un šis ir pirmais posms tajā procesā - abstrahēties no cilvēka rakstītā, vienkārši lasāmā, koda
 
 Turpinot ar kodu...
 
@@ -41,7 +41,7 @@ Te svarīgi norādīt, ka koks tiek apskatīts no kreisās puses, uz labo. Tas i
 
 ## Kā izaudzēt Abstraktās Sintakses Koku
 
-Turpinot ideju par atbrīvošanos no cilvēka rakstītā koda, pirmais solis ir saprast kādi simboli veido kodu.
+Pirmais solis ir saprast kādi simboli veido kodu un kāda ir to nozīme tajā
 
 ```python
 a = 3-2
@@ -71,7 +71,7 @@ AIZVEROŠĀ IEKAVA
 
 ### Lekseris
 
-Augstāk minētos simbolus turpmāk saukšu par tokeniem.
+Augstāk minētos simbolus turpmāk sauksim par tokeniem.
 
 Lekseris sastāv no cikla, kas iet cauri kodam un veido augstāk minēto sarakstu. Atkal iedomājamies vienkāršu matemātisku izteiksmi.
 
@@ -122,7 +122,7 @@ CIPARS 3
 CIPARS 4
 ```
 
-Tas tāpēc, ka mūsu lekseris nav sevišķi tālredzīgs. Tas ierauga ciparu un uzreiz met ārā jaunu tokenu. Šajā piemērā, protams, ir iespēja šim sarakstam izskriet cauri vēlreiz un, ieraugot vairākus blakus esošus ciparus, savienot tos skaitlī, bet glītāk būtu šo problēmu atrisināt jau lekserī. Lai to izdarītu būtu vajadzība paskatīties kas seko pēc pašreizējā tokena.
+Tas tāpēc, ka mūsu lekseris ir ļoti tuvredzīgs. Tas ierauga ciparu un uzreiz met ārā jaunu tokenu. Šajā piemērā, protams, ir iespēja šim sarakstam izskriet cauri vēlreiz un, ieraugot vairākus blakus esošus ciparus, savienot tos skaitlī, bet glītāk būtu šo problēmu atrisināt jau lekserī. Lai to izdarītu būtu vajadzība paskatīties kas seko pēc pašreizējā tokena.
 
 ```python
 input = "2+1*3"
@@ -201,7 +201,7 @@ Pārseris ir nākamā stadija pēc leksera. Tas izmanto iepriekš ģenerēto tok
 
 #### "Vilcienu šķirošanas" algoritms
 
-Reāli izmantojami pārseri var būt diezgan sarežģīti un netiek rakstīti manuāli, bet gan izmantojot pārsera ģenerātorus. Arī priede tā dara, bet ir pāris vienkārši algoritmi, kas var ģenerēt apgriesto poļu pierakstu no tokenu saraksta. Tam ir dots tāds nosaukums, jo tas atgādina [vilcienu šķirošanas staciju](https://lv.wikipedia.org/wiki/%C5%A0%C4%B7iro%C5%A1anas_stacija)
+Reāli izmantojami pārseri var būt diezgan sarežģīti un netiek rakstīti manuāli, bet gan izmantojot pārsera ģeneratorus. Arī priede tā dara, bet ir pāris vienkārši algoritmi, kas var ģenerēt apgriesto poļu pierakstu no tokenu saraksta. Tam ir dots tāds nosaukums, jo tas atgādina [vilcienu šķirošanas staciju](https://lv.wikipedia.org/wiki/%C5%A0%C4%B7iro%C5%A1anas_stacija)
 
 "Vilcienu šķirošanas" algoritmā tiek izmantoti divi steki. Viens uzglabā skaitliskas vērtības, otrs uzglabā darbību zīmes un citus operatorus.
 
@@ -216,7 +216,7 @@ Kā `3 − 4 + 5` pārveidot apgriestajā poļu pierakstā:
 
 ## Leksera + Parsera ģenerators
 
-Lekseri un pārseri bieži netiek rakstīti ar roku, arī Priedes gadījumā. Tā vietā izmantojot leksera + pārsera ģeneratorus. Priede izmanto atvērtā koda projektu [Hime](https://cenotelie.fr/projects/hime). Tas nolasa kodu un ģenerē abstraktās sintakses koku pēc noteiktas gramatikas. Katram gramatikas punktam ir nosaukums un pēc `->` simbola rakstāmi simboli un citi punkti, kas to sastāda, `|` svītrai kalpojot par `vai` operatoru. Galā noslēdzoties ar semikolu.
+Lekseri un pārseri bieži netiek rakstīti ar roku, arī Priedes gadījumā. Tā vietā izmantojot leksera + pārsera ģeneratorus. Priede izmanto atvērtā koda projektu [Hime](https://cenotelie.fr/projects/hime). Tas nolasa kodu un ģenerē abstraktās sintakses koku pēc noteiktas gramatikas. Katram gramatikas punktam ir nosaukums un pēc `->` simbola seko simboli, kas to sastāda, `|` svītrai kalpojot par `vai` operatoru. Galā noslēdzoties ar semikolu.
 
 ```
 exp_atom   -> NUMBER
