@@ -1,6 +1,6 @@
 ---
 author: Mārcis
-pubDatetime: 2024-01-04
+pubDatetime: 2024-01-21
 title: "Priedes interpretatora pirmās stadijas"
 featured: false
 tags:
