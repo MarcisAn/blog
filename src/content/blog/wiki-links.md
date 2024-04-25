@@ -26,7 +26,7 @@ Visa latviešu valoas Vikipēdija, bez attēliem, aizņem 800 MB un to lejupiel�
 
 Šo failu sauc par 'MediaWiki XML dump'.
 
-MediaWiki ir programmatūra, ar kuru darbojās Vikipēdija un arī citas, līdzīga tipa lapas, kā [MuseWiki](musewiki.org).
+MediaWiki ir programmatūra, ar kuru darbojās Vikipēdija un arī citas, līdzīga tipa lapas, kā [MuseWiki](https://musewiki.org).
 
 Fails ir XML formātā un, kā izrādās, XML failu apstrāde nav īpaši jautra. Tomēr atradu [Rust bibliotēku](https://crates.io/crates/wikidump), kas var nolasīt tieši MediaWiki XML failus. Ar to, mēs varam izveidot ciklu, kas iet cauri visiem rakstiem latviešu valodas Vikipēdijā. Pēc noklusējuma, šī bibliotēka tekstu apstrādā un izņem saites, atstājot tīru tekstu, tāpēc vajadzēja speciāli norādīt, ka vēlos jēlo MediaWiki formatēto tekstu.
 
@@ -44,7 +44,6 @@ Vikipēdijā reizēm atrodamas saites sarkanā krāsā. Uz tām uzklikšķinot, 
 
 Neīstas saites nevarētu uzskatīt par saitēm, šajā gadījumā, tāpēc tās filtrējam ārā.
 
-Filtrēt nepieciešams arī saites uz kategoriju lapām, jo tas ir nedaudz negodīgi.
 
 ## Datu urbšana
 
@@ -58,11 +57,11 @@ Sākumā netīšām palaidu kodu  `debug` versijā, bet tad atjēdzos un palaidu
 
 Grafu datu struktūra dara tieši to, kas nepieciešams. Grafs sastāv no punktiem un līnijām starp tiem. Sākumā izveidojam visus punktus - Vikipēdijas rakstus, pēc tam līnijas starp tiem - saites. Līnija ir vienvirziena, jo rakstam, uz kuru ved saite, vienmēr nebūs saite atpakaļ uz sākotnējo rakstu.
 
-Tālāk, izmantojam "A*" algoritmu, lai atrastu īsāko ceļu starp diviem rakstiem. Tas ir tas pats algoritms, kas meklē labāko ceļu navigācijas lietotnēs. Ir iespējams katrai saitei iestatīt vērtību - garumu, lai "A*" algoritms atrastu īsāko ceļu, bet šajā gadījumā visiem ceļiem ir vienāds garums.
+Tālāk, izmantojam "A*" algoritmu, lai atrastu īsāko ceļu starp diviem rakstiem. Ir iespējams katrai saitei iestatīt vērtību - garumu, lai "A*" algoritms atrastu īsāko ceļu, bet šajā gadījumā visiem ceļiem ir vienāds garums.
 
 ## WebAssembly
 
-Rakstīt šo JavaScript'ā priekš WEB lietotnes būtu diezgan neefektīvi, tāpēc izmantoju WebAssembly, lai rust kodu darbinātu pārlūkā, bez servera. WebAssembly pakotnes izveide nepavisam nebija traka, lai gan es gandrīz visu kopēju no [Priedes](https://github.com/MarcisAn/priede) kodbāzes, kur pavadīju labu laiciņu, lai saprastu, kā savienot Rust'u ar JavaScript'u. 
+Rakstīt šo JavaScript'ā priekš WEB lietotnes būtu diezgan neefektīvi, tāpēc izmantoju WebAssembly, lai rust kodu darbinātu pārlūkā, bez servera. WebAssembly pakotnes izveide nepavisam nebija traka, lai gan es gandrīz visu kopēju no [Priedes](https://github.com/MarcisAn/priede) kodbāzes. 
 
 Uz mana datora īsākā ceļa meklēšana aizņem ap 5 sekundēm, ko, droši vien, varētu optimizēt.
 
