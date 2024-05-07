@@ -9,9 +9,9 @@ tags:
 description: "Eglītes lampiņas, kurām noteiktas 3D koordinātas"
 ---
 
-Jau 3 gadus ziemassvētku tuvošanās man nozīmē lielu ņemšanos ar eglītes lampiņām. Sākotnējā ideja nāk no angļu matemātikas jūtūbera [Stand up maths](https://www.youtube.com/watch?v=TvlpIojusBE) kam es pievienoju šo to jaunu.
+Jau 3 gadus ziemassvētku tuvošanās man nozīmē lielu ņemšanos ar eglītes lampiņām. Sākotnējā ideja nāk no angļu matemātikas jūtūbera [Stand up maths](https://www.youtube.com/watch?v=TvlpIojusBE), kura idejai es pievienoju šo to jaunu.
 
-Visa būtība slēpjās principā, ka katrai lampiņai uz eglītes tiek noteiktas koordinātas 3D telpā. Tas paver iespēju uz lampiņām atskaņot 3D animācijas. Iedomājamies kubu - ir zināmas kuba virsotņu koordinātas, kā arī katras lampiņas koordinātas, tātad varam noteikt, ka lampiņas, kas atrodās iekšā iedomātajā kubā tiek iedegtas kādā krāsā. Iedomātais kubs kustās laika gaitā. Tieši pēc šādas loģikas ir veidota lielākā daļa animāciju. Šogad arī pirmo reizi izveidoju sistēmu, kas garāmgājējiem ļauj interaktīvi kontrolēt lampiņu animācijas.
+Visa būtība slēpjas principā, ka katrai lampiņai uz eglītes tiek noteiktas koordinātas 3D telpā. Tas paver iespēju uz lampiņām atskaņot 3D animācijas. Iedomājamies kubu - ir zināmas kuba virsotņu koordinātas, kā arī katras lampiņas koordinātas, tātad varam noteikt, ka lampiņas, kas atrodas iekšā iedomātajā kubā tiek iedegtas kādā krāsā. Iedomātais kubs kustās laika gaitā. Tieši pēc šādas loģikas ir veidota lielākā daļa animāciju. Šogad arī pirmo reizi izveidoju sistēmu, kas garāmgājējiem ļauj interaktīvi kontrolēt lampiņu animācijas.
 
 ## Satura rādītājs
 
@@ -23,19 +23,19 @@ Visa būtība slēpjās principā, ka katrai lampiņai uz eglītes tiek noteikta
 src="/assets/xmaslights/v0.5.webm">
 </video>
 
-Šis bija neliels eksperiments klases eglītē, kas koordinātu noteikšanas ziņā būtiski atšķirās no turpmākajiem
+Šis bija neliels eksperiments klases eglītē, kas koordinātu noteikšanas ziņā būtiski atšķiras no turpmākajiem
 variantiem tādā ziņā, ka koordinātas netika noteiktas, tika noteikta tikai lampiņu secība uz ass. Kārtošanas
 algoritms
 iededz 2 lampiņas atšķirīgās krāsās un tad cilvēks nosaka, kura lampiņa ir tālāk uz ass. Neskatoties uz neatbilstību
 virsrakstam,
 šī metode strādāja diezgan labi, lai gan sarežģītām animācijām tas nestrādātu,
-jo eglītes lampiņas nav vienmērīgi izmētātas kubā, bet nosakot tikai secību uz ass, mēs to nezinam. Vēlāk redzēsim, ka lampiņas ir izkārtotas, atbilstoši eglītei - konusā, kā arī leilākā daļa atrodās tālāk no eglītes centra.
+jo eglītes lampiņas nav vienmērīgi izmētātas kubā, bet nosakot tikai secību uz ass, mēs to nezinām. Vēlāk redzēsim, ka lampiņas ir izkārtotas, atbilstoši eglītei - konusā, kā arī lielākā daļa atrodas tālāk no eglītes centra.
 
 ### 2021 v2
 
-Šoreiz tika noteiktas īstas koordinātas, uzņemot fotogrāfijas, kurā katrā ir ieslēga viena lampiņa, un tad par
+Šoreiz tika noteiktas īstas koordinātas, uzņemot fotogrāfijas, kurā katrā ir ieslēgta viena lampiņa, un tad par
 lampiņu
-koordinātām pieņemot iedegtās lampiņas atrašanās vietu fotogrāfijā, pikseļos. Parādijās problēma, kas sekos vēl
+koordinātām pieņemot iedegtās lampiņas atrašanās vietu fotogrāfijā, pikseļos. Parādījās problēma, kas sekos vēl
 ilgi - lampiņas
 nevar redzēt, jo priekšā ir egles zari. Daudzām lampiņām tāpēc nevarēja noteikt koordinātas, bet pēc tam es tās iebīdīju
 vietā
@@ -59,13 +59,13 @@ Tāpēc perspektīva var nobīdīt mērījumus.
 
 ![Perspektīvas nobīde](/assets/xmaslights/perspective.png)
 
-Divas lampiņas, kas atrodās vienādā augstumā virs zemes var izskatīties dažādos augstumos no vidēja skatu punkta.
+Divas lampiņas, kas atrodas vienādā augstumā virs zemes var izskatīties dažādos augstumos no vidēja skatu punkta.
 
 Tāpēc šogad kustināsim pašu kameru.
 <video src="/assets/xmaslights/slide.webm" loop controls alt="Kameras kustība"></video>
 
 Pa koka brusu slīd kamera,. Tiek iedegta viena
-lampiņa un kamera tiek bīdīta pa brusu līdz lampiņa atrodās kameras kadra centrā. Tad var apgalvot, ka kamera atrodās
+lampiņa un kamera tiek bīdīta pa brusu līdz lampiņa atrodas kameras kadra centrā. Tad var apgalvot, ka kamera atrodas
 vienā punktā ar lampiņu uz ass un pierakstīt kameras atrašanās vietu uz brusas. Tā ar 200 lampiņām, pa 3 asīm un
 gatavs! Cilvēciskās kļūdas rezultātā, pāris lampiņu koordinātas bija nobīdītas, bet tās iebīdīju vietā, balstoties
 uz blakus esošajām.
@@ -77,7 +77,7 @@ ejot uz skolu, paslīdēju uz ielas un nolauzu kameru, tad skolā salīmēju.
 
 ![Kameras uzparikte](/assets/xmaslights/calibration.jpg)
 Koordinātu noteikšanas process vienai no horizontālajām asīm.
-Kamera atrodās vienā punkā ar lampiņu, kad tā atrodās kameras kadra centrā. Šīs līnijas uzzīmēt
+Kamera atrodas vienā punktā ar lampiņu, kad tā atrodas kameras kadra centrā. Šīs līnijas uzzīmēt
 programmatūrā, protams, būtu smukāk.
 
 Nedomāju, ka izmantošu šo metodi vēlreiz. Precizitāte, iespējams, bija lielāka, bet šī metode bija ārkārtīgi laikietilpīga, it īpaši vienam. Pēdējo asi mēs kartējām trijatā, kur viens bīda kameru un lasa koordinātu, otrs spiež pogu, kas iet uz nākamo lampiņu un trešais pieraksta koordinātas.
@@ -103,7 +103,7 @@ Sākotnējais plāns bija rakstīt animācijas rust'ā un tad kompilēt tās pri
 vizualizētājā, bet beigās sanāca vēl elegantāk.
 
 Jaunais plāns ir animācijas kadrus ģenerēt vienreiz, uz servera, un tad atskaņot vienlaicīgi uz kontroliera un
-vizualizācijā - web lapā. Tādejādi katra animācija nav jāpārraksta divreiz, kā arī nav jāsūta milzīgs datu apjoms starp
+vizualizācijā - web lapā. Tādējādi katra animācija nav jāpārraksta divreiz, kā arī nav jāsūta milzīgs datu apjoms starp
 abiem. Animācijas kadrs satur informāciju par to, kādām lampiņām būtu jāspīd kādā krāsā. Kadru daudzumu sekundē var noteikt kontroles lietotnē.
 
 ![Programmatūras shēma](/assets/xmaslights/scheme.png)
@@ -130,4 +130,4 @@ servera, jo kontrolierī notiek tieši tas pats, tikai dati tiek izvadīti uz re
 ![Kontroles lietotne](/assets/xmaslights/app.jpg)
 
 
-Nakamajā gadā jāizdomā kaut kas radikāli atšķirīgs
+Nākamajā gadā jāizdomā kaut kas radikāli atšķirīgs

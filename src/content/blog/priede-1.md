@@ -22,7 +22,7 @@ Pirms ķerties klāt kodam, varētu paskatīties uz matemātiskām izteiksmēm, 
 1+2*3
 ```
 
-Ņemot vērā mateimātisko darbību secību, vispirms veicam reizināšanu un tad saskaitīšanu. Šīs izteiksmes izpildi varētu attēlot grafikā.
+Ņemot vērā matemātisko darbību secību, vispirms veicam reizināšanu un tad saskaitīšanu. Šīs izteiksmes izpildi varētu attēlot grafikā.
 
 ![Matemātiskās izteiksmes ASK](/assets/priede-1/ast-1.jpg)
 
@@ -79,7 +79,7 @@ Lekseris sastāv no cikla, kas iet cauri kodam un veido augstāk minēto sarakst
 2+1*3
 ```
 
-Uzrakstīt lekseri, kas var saprast šādu izteiksmi, ir diezgan elemetāri tāpēc, ka katrs tokens ir viena rakstzīme tekstā, tāpēc viss, kas vajadzīgs ir cikls, kas iet cauri tekstam un pārbauda kādai rakstzīmei tas uzdūries virsū.
+Izveidot lekseri, kas var saprast šādu izteiksmi, ir diezgan elementāri tāpēc, ka katrs tokens ir viena rakstzīme tekstā, tāpēc viss, kas vajadzīgs ir cikls, kas iet cauri tekstam un pārbauda kādai rakstzīmei tas uzdūries virsū.
 
 ```python
 input = "2+1*3"
@@ -146,15 +146,15 @@ while True:
         print("Neatpazīts simbols")
 ```
 
-Šoreiz ieraugot ciparu, pārbaudam nākamo rakstzīmi. Ja tā arī ir cipars, tātad esam sastapuši daudzciparu skaitli un ejam uz priekšu par rakstzīmju sarakstu kamēr sastopam rakstzīmi, kas nav cipars. Tad visus savāktos ciparus savienojam skaitlī un sviežam ārā.
+Šoreiz ieraugot ciparu, pārbaudām nākamo rakstzīmi. Ja tā arī ir cipars, tātad esam sastapuši daudzciparu skaitli un ejam uz priekšu par rakstzīmju sarakstu kamēr sastopam rakstzīmi, kas nav cipars. Tad visus savāktos ciparus savienojam skaitlī un sviežam ārā.
 
 Šajā kodā ir divas funkcijas ar būtisku atšķirību.
 
-`get_next_character()` atgriež nākamo rakstzīmi, kā arī noņem to no rakstzīmju saraksta. Tādejādi mēs to apstrādājam tagad.
+`get_next_character()` atgriež nākamo rakstzīmi, kā arī noņem to no rakstzīmju saraksta. Tādējādi mēs to apstrādājam tagad.
 
 `see_next_character()` atgriež nākamo rakstzīmi, bet to atstāj tālākai apskatīšanai.
 
-Funkcija `digits_to_number()` apvieno ciparu sarkastu skaitlī
+Funkcija `digits_to_number()` apvieno ciparu sarakstu skaitlī
 
 Tagad iegūstam pareizo tokenu sarakstu:
 
@@ -168,7 +168,7 @@ SKAITLIS 34
 
 ### Apgrieztais poļu pieraksts
 
-Apgrieztais poļu pieraksts ir matemātisku izteiksmju pieraksta veids un to varētu arī uzskatīt par alternatīvu abstraktajam sintakes kokam. Tajā tiek pierakstīti abi darbības skaitļi un tikai pēc tam darbības zime.
+Apgrieztais poļu pieraksts ir matemātisku izteiksmju pieraksta veids un to varētu arī uzskatīt par alternatīvu abstraktajam sintakses kokam. Tajā tiek pierakstīti abi darbības skaitļi un tikai pēc tam darbības zīme.
 
 `2 + 1` kļūst par `2 1 +`
 
@@ -176,22 +176,22 @@ Apgrieztais poļu pieraksts ir matemātisku izteiksmju pieraksta veids un to var
 
 Izpildīt izteiksmi apgrieztajā poļu pierakstā var, nevienā brīdi neredzot visu izteiksmi kopumā, tikai lineāri ejot cauri izteiksmei, pa vienam simbolam. Nav arī nekas jāzina par darbību secību.
 
-Lai izpildītu šo pierakstu nepieciešams saraksts ar skaitliskām vērtībām - steks. Steka īpatnība ir tāda, ka pievienot skaitļus var tikai tā augšā un noņemt arī var tikai pašu augšējo vertību.
+Lai izpildītu šo pierakstu nepieciešams saraksts ar skaitliskām vērtībām - steks. Steka īpatnība ir tāda, ka pievienot skaitļus var tikai tā augšā un noņemt arī var tikai pašu augšējo vērtību.
 
 Kā izpildīt darbību `3 4 − 5 +`:
 
 - Ieraugam skaitli 3 - ieliekam to steka augšpusē
 - Ieraugam skaitli 4 - ieliekam to steka augšpusē
-- Ieraugot atņemšanas zīmi, noņemam no steka augšas divas vērtības uz izpildam atņemšanas darbību. Rezultātu uzliekam atpakaļ steka augšpusē.
+- Ieraugot atņemšanas zīmi, noņemam no steka augšas divas vērtības uz izpildām atņemšanas darbību. Rezultātu uzliekam atpakaļ steka augšpusē.
 - Ieraugam skaitli 5 - ieliekam to steka augšpusē
-- Ieraugot saskaitīšanas zīmi, noņemam no steka augšas divas vērtības uz izpildam saskaitīšanas darbību. Rezultātu uzliekam atpakaļ steka augšpusē.
+- Ieraugot saskaitīšanas zīmi, noņemam no steka augšas divas vērtības uz izpildām saskaitīšanas darbību. Rezultātu uzliekam atpakaļ steka augšpusē.
 - Programmas beigas - noņemam augšējo vērtību no steka un tas arī ir rezultāts
 
 Kā izpildīt darbību `3 4 - sin`:
 
 - Ieraugam skaitli 3 - ieliekam to steka augšpusē
 - Ieraugam skaitli 4 - ieliekam to steka augšpusē
-- Ieraugot atņemšanas zīmi, noņemam no steka augšas divas vērtības uz izpildam atņemšanas darbību. Rezultātu uzliekam atpakaļ steka augšpusē.
+- Ieraugot atņemšanas zīmi, noņemam no steka augšas divas vērtības uz izpildām atņemšanas darbību. Rezultātu uzliekam atpakaļ steka augšpusē.
 - Ieraugam funkciju, kurai nepieciešams viens arguments, tāpēc noņemam no steka augšējo vērtību un izsaucam sīnusa funkciju ar to. Funkcijas rezultātu uzliekam steka augšpusē.
 - Programmas beigas - noņemam augšējo vērtību no steka un tas arī ir rezultāts
 
@@ -201,18 +201,18 @@ Pārseris ir nākamā stadija pēc leksera. Tas izmanto iepriekš ģenerēto tok
 
 #### "Vilcienu šķirošanas" algoritms
 
-Reāli izmantojami pārseri var būt diezgan sarežģīti un netiek rakstīti manuāli, bet gan izmantojot pārsera ģeneratorus. Arī priede tā dara, bet ir pāris vienkārši algoritmi, kas var ģenerēt apgriesto poļu pierakstu no tokenu saraksta. Tam ir dots tāds nosaukums, jo tas atgādina [vilcienu šķirošanas staciju](https://lv.wikipedia.org/wiki/%C5%A0%C4%B7iro%C5%A1anas_stacija)
+Reāli izmantojami pārseri var būt diezgan sarežģīti un netiek rakstīti manuāli, bet gan izmantojot pārsera ģeneratorus. Arī priede tā dara, bet ir pāris vienkārši algoritmi, kas var ģenerēt apgriezto poļu pierakstu no tokenu saraksta. Tam ir dots tāds nosaukums, jo tas atgādina [vilcienu šķirošanas staciju](https://lv.wikipedia.org/wiki/%C5%A0%C4%B7iro%C5%A1anas_stacija)
 
 "Vilcienu šķirošanas" algoritmā tiek izmantoti divi steki. Viens uzglabā skaitliskas vērtības, otrs uzglabā darbību zīmes un citus operatorus.
 
-Kā `3 − 4 + 5` pārveidot apgriestajā poļu pierakstā:
+Kā `3 − 4 + 5` pārveidot apgrieztajā poļu pierakstā:
 
 - Ieraugam skaitli 3 - ieliekam to vērtību steka augšpusē
 - Ieraugot atņemšanas zīmi - ieliektam to operatoru stekā
 - Ieraugam skaitli 4 - ieliekam to vērtību steka augšpusē
 - Ieraugam saskaitīšanas zīmi - steka augšpusē jau ir operators ar tādu pašu prioritāti ( - ), tāpēc to noņemam un pievienojam vērtību stekam, bet operatoru stekam pievienojam jauno saskaitīšanas zīmi
 - Ieraugam skaitli 5 - ieliekam to vērtību steka augšpusē
-- Programmas beigas - visus operatorus no operatoru steka pievienojam vērtību stekam. Tad vērtību stekā atradīsies izteiksme apgriestajā poļu pierakstā. `3 4 − 5 +`
+- Programmas beigas - visus operatorus no operatoru steka pievienojam vērtību stekam. Tad vērtību stekā atradīsies izteiksme apgrieztajā poļu pierakstā. `3 4 − 5 +`
 
 ## Leksera + Parsera ģenerators
 
@@ -233,8 +233,8 @@ plusminus   -> reizdal
 exp        -> plusminus;
 ```
 
-Šī gramatika norāda, ka reizināšanas un dalīšanas darbības ir kā apakšsadaļa saskaitīšanas un atņemšanas darbībām. Tādejādi tiek nodrošināta pareiza matemātisko darbību secība.
+Šī gramatika norāda, ka reizināšanas un dalīšanas darbības ir kā apakšsadaļa saskaitīšanas un atņemšanas darbībām. Tādējādi tiek nodrošināta pareiza matemātisko darbību secība.
 
-Šis gramatikas pieraksts tiek izmantots, lai Hime ģenerētu lekseri un parseri, kas atrodās binārā formā. Tālāk Rust kods izmanto šos bināros failus, kopā ar [Hime rust bibliotēku](https://crates.io/crates/hime_redist), lai ģenerētu abstrakto sintakses koku Priedes programmēšanas valodas kodam.
+Šis gramatikas pieraksts tiek izmantots, lai Hime ģenerētu lekseri un parseri, kas atrodas binārā formā. Tālāk Rust kods izmanto šos bināros failus, kopā ar [Hime rust bibliotēku](https://crates.io/crates/hime_redist), lai ģenerētu abstrakto sintakses koku Priedes programmēšanas valodas kodam.
 
 Un tālāk sākās jautrā daļa.
