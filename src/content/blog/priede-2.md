@@ -571,13 +571,13 @@ fn parse_ast(node: AstNode) -> i32 {
 
 Ja Celsium's saskarsies ar kodu, kas nevar tikt izpildīts, tas krašos un cauri, bet glītāk būtu parādīt lietotājam kļūdas paziņojumu vēl pirms kods tiek palaists.
 
-Priedē var atgadīties divu veidu errori:
+Priedē var atgadīties divu veidu kļūdas:
 
-### Leksera/Pārsera errori
+### Leksera/Pārsera kļūdas
 
 Šajā gadījumā programmas kods vispār nav saprotams un apstrādājams, jo neatbilst Priedes sintaksei.
 
-Šos errorus atrod un apstrādā [Hime](https://cenotelie.fr/projects/hime) parsera ģenerators un Priedei tikai tie glīti jāparāda lietotājam.
+Šīs kļūdas atrod un apstrādā [Hime](https://cenotelie.fr/projects/hime) parsera ģenerators un Priedei tikai tie glīti jāparāda lietotājam.
 
 Piemēram, Priedes lietotājs mēģina definēt mainīgo ar `=` zīmi.
 
@@ -585,7 +585,7 @@ Piemēram, Priedes lietotājs mēģina definēt mainīgo ar `=` zīmi.
 skaitlis a = 2
 ```
 
-Tajā pozīcijā, kur atrodās `=` zīme, būtu jāatrodas `:` zīmei, tāpēc šeit ir neparedzēta simbola errors.
+Tajā pozīcijā, kur atrodās `=` zīme, būtu jāatrodas `:` zīmei, tāpēc šeit ir neparedzēta simbola kļūda.
 
 ```
 Kļūda: 
@@ -594,7 +594,7 @@ Faila "E:\Dev\priede\examples\sveika_pasaule.pr"
 1. rindiņā
 ```
 
-### Datu tipu errori
+### Datu tipu kļūdas
 
 Priede cenšas uztraukties par datu tipiem, piemēram, ja lietotājs mēģina definēt mainīgo ar skaitļa tipu, bet sākotnējā vērtībā piešķir tekstu.
 
@@ -602,7 +602,7 @@ Priede cenšas uztraukties par datu tipiem, piemēram, ja lietotājs mēģina de
 skaitlis a : "šis nav skaitlis"
 ```
 
-Šis kods metīs erroru par to ka sākotnējā vērtība nesakrīt ar mainīgā datu tipu.
+Šis kods metīs kļūdas par to ka sākotnējā vērtība nesakrīt ar mainīgā datu tipu.
 
 Šajā gadījumā to noteikt kompilācijas laikā ir diezgan vienkārši, jo `TEXT` ir tieša apakšsekcija zem mainīgā definēšanas. Bet sākotnējās vērtības var būt arī matemātiskas izteiksmes.
 
@@ -614,6 +614,6 @@ teksts a : 3+4*2
 
 Te nonākam pie vajadzības iet cauri ASK tā, kā to darītu izpildot programmu, pirms tā patiešām tiek izpildīta. Tas, protams, nav reāli, bet ja mērķis ir pārbaudīt datu tipus, tad varam izveidot nelielu interpretatoru, kas strādā tikai ar datu tipiem, nevis reālām vērtībām.
 
-Saskaitīšanas darbība paņem divus datu tipus ka saskaitāmos, pārbauda vai saskaitīšana ir iespējama ar šiem datu tipiem. Ja nav, tad metam erroru. Ja ir iespējama, tad tā atgriež rezultāta datu tipu.
+Saskaitīšanas darbība paņem divus datu tipus ka saskaitāmos, pārbauda vai saskaitīšana ir iespējama ar šiem datu tipiem. Ja nav, tad metam kļūdu. Ja ir iespējama, tad tā atgriež rezultāta datu tipu.
 
 Tādējādi sanāk atgriezties pie lēkāšanas pa ASK koku, bet kompilācijas laikā.
