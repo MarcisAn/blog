@@ -2,7 +2,7 @@
 author: Mārcis
 pubDatetime: 2024-06-12
 title: "Datu glabāšana Priedē"
-featured: true
+featured: false
 tags:
   - priede
 description: "Mainīgo un funkciju definēšana Priedē, lokālie mainīgie un vēl šis tas."

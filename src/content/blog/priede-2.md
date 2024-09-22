@@ -2,7 +2,7 @@
 author: Mārcis
 pubDatetime: 2024-05-26
 title: "Priedes koda izpilde"
-featured: true
+featured: false
 tags:
   - priede
 description: "Kā priede nonāk no abstraktā sintakses koka līdz izpildītai programmai"

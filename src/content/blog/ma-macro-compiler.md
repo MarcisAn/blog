@@ -1,7 +1,7 @@
 ---
 author: Mārcis
 pubDatetime: 2024-06-29
-title: "Priedes kompilēšana uz grandMA3 makro funkcijām"
+title: "Priedes kompilēšana uz grandMA2 makro funkcijām"
 featured: true
 tags:
   - priede
