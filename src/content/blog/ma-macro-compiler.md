@@ -7,7 +7,7 @@ tags:
   - priede
   - gaismas
   - grandMA
-description: "Priedes virtuālās mašīnas emulācija skatuves gaismu vadības pults komandrindiņa" 
+description: "Priedes virtuālās mašīnas emulācija skatuves gaismu vadības pults komandrindiņā" 
 ---
 
 ## Satura rādītājs
