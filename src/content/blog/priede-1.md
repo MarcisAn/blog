@@ -35,7 +35,7 @@ a = 3-2
 print(1+2*a)
 ```
 
-![Matemātiskās izteiksmes ASK](/assets/priede-1/ast-2.jpg)
+![ASK](/assets/priede-1/ast-2.jpg)
 
 Te svarīgi norādīt, ka koks tiek apskatīts no kreisās puses, uz labo. Tas ir svarīgi piem. atņemšanas darbībai un programmas saknei, kur ir svarīga secība kādā tiek izpildītas instrukcijas
 

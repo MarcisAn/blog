@@ -585,7 +585,7 @@ Piemēram, Priedes lietotājs mēģina definēt mainīgo ar `=` zīmi.
 skaitlis a = 2
 ```
 
-Tajā pozīcijā, kur atrodās `=` zīme, būtu jāatrodas `:` zīmei, tāpēc šeit ir neparedzēta simbola kļūda.
+Tajā pozīcijā, kur atrodas `=` zīme, būtu jāatrodas `:` zīmei, tāpēc šeit ir neparedzēta simbola kļūda.
 
 ```
 Kļūda: 
