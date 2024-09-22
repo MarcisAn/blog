@@ -1,6 +1,6 @@
 ---
 author: Mārcis
-pubDatetime: 2024-06-29
+pubDatetime: 2024-09-22
 title: "Priedes kompilēšana uz grandMA2 makro funkcijām"
 featured: true
 tags:
