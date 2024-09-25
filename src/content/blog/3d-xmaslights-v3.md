@@ -9,9 +9,9 @@ tags:
 description: "Eglītes lampiņas, kurām noteiktas 3D koordinātas"
 ---
 
-Jau 3 gadus ziemassvētku tuvošanās man nozīmē lielu ņemšanos ar eglītes lampiņām. Sākotnējā ideja nāk no angļu matemātikas jūtūbera [Stand up maths](https://www.youtube.com/watch?v=TvlpIojusBE), kura idejai es pievienoju šo to jaunu.
+Jau 3. gadu Ziemassvētki man tuvojās ar rosīšanos ap eglītes lampiņām. Sākotnējā ideja nāk no angļu matemātiķa [Meta Pārkera](https://www.youtube.com/watch?v=TvlpIojusBE), kura pamatideju es papildināju un arī izmantoju citu kartēšanas metodi.
 
-Visa būtība slēpjas principā, ka katrai lampiņai uz eglītes tiek noteiktas koordinātas 3D telpā. Tas paver iespēju uz lampiņām atskaņot 3D animācijas. Iedomājamies kubu - ir zināmas kuba virsotņu koordinātas, kā arī katras lampiņas koordinātas, tātad varam noteikt, ka lampiņas, kas atrodas iekšā iedomātajā kubā tiek iedegtas kādā krāsā. Iedomātais kubs kustās laika gaitā. Tieši pēc šādas loģikas ir veidota lielākā daļa animāciju. Šogad arī pirmo reizi izveidoju sistēmu, kas garāmgājējiem ļauj interaktīvi kontrolēt lampiņu animācijas.
+Visa būtība slēpjas principā, ka katrai lampiņai uz eglītes tiek noteiktas koordinātas 3D telpā. Tas paver iespēju uz lampiņām atskaņot 3D animācijas. Iedomājamies kubu - ir zināmas kuba virsotņu koordinātas, kā arī katras lampiņas koordinātas, tātad varam noteikt, ka lampiņas, kas atrodas iekšā iedomātajā kubā tiek iedegtas kādā krāsā. Iedomātais kubs kustās laika gaitā. Tieši pēc šādas loģikas ir veidota lielākā daļa animāciju. Šogad arī izveidoju sistēmu, kas garāmgājējiem ļauj interaktīvi kontrolēt lampiņu animācijas.
 
 ## Satura rādītājs
 
@@ -116,7 +116,7 @@ nosūta vizualizācijai un lampiņu kontrolierim vienlaicīgi.
 
 Lampiņu animācija sastāv no vairākām krāsām. Katra animācija definē cik krāsas tajā tiks izmantotas un kādi ir to nosaukumi. Šīs krāsas var mainīt kontroles web lapā. Krāsas var izteikt
 arī matemātiski. RGB un HSV sistēmā izteiktas krāsas sastāv no 3 skaitliskām vērtībām, kuras var
-izteikt ar matemātisku izteiksmi. Katra izteiksme izvada skaitli intervālā 0-100. Labākais, iespējams vienīgais,
+izteikt ar matemātisku izteiksmi. Katra izteiksme rezultējās skaitlī intervālā 0-100. Labākais, iespējams vienīgais,
 pielietojums
 ir iekrāsot lampiņas atkarībā no to koordinātām. Šajās izteiksmēs, kā mainīgos var ierakstīt lampiņas koordinātu uz
 konkrētas ass, kas arī ir intervālā 0-100. Šo izteiksmju skaitļošanai sākotnēji gribēju izmantot [priedi](https://github.com/MarcisAn/priede)</a>,
@@ -128,6 +128,3 @@ pārrakstīju kontrolieri no sākotnējā varianta Python'ā uz NodeJs un nokop�
 servera, jo kontrolierī notiek tieši tas pats, tikai dati tiek izvadīti uz reālajām lampiņām, nevis uz vizualizētāju.
 
 ![Kontroles lietotne](/assets/xmaslights/app.jpg)
-
-
-Nākamajā gadā jāizdomā kaut kas radikāli atšķirīgs
