@@ -10,6 +10,10 @@ tags:
 description: "Priedes kompilēšana 60 gadus vecam datoram"
 ---
 
+Citiem vārdiem sakot, es uzrakstīju kompilatoru savai programmēšanas valodai un tagad ar to var programmēt Apollo navigācijas datoru.
+
+---
+
 Iepazīstieties, Apollo navigācijas dators.
 
 ![Apollo navigācijas dators un DSKY](/assets/priede-agc/agc.jpg)
