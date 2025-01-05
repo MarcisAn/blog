@@ -39,14 +39,11 @@ const socialCount = SOCIALS.filter(social => social.active).length;
         </svg>
         <span class="sr-only">RSS Feed</span>
       </a>
-
-      <p>Sveikiņi!</p>
-
       {
         // only display if at least one social link is enabled
         socialCount > 0 && (
           <div class="social-wrapper">
-            <div class="social-links">SocLinki:</div>
+            <div class="social-links">Githubs:</div>
             <Socials />
           </div>
         )
