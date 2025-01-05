@@ -211,13 +211,13 @@ ja negativs = 1 {
 }
 ```
 
-Visi prieki no šī koda darbības apsīka, kad es mēģināju reizināt decimālskaitļus. Ja vismaz viens no tiem ir vesels skaitlis, tad nav problēmu, jo veselu skaitli var ielikt kā cikla skaitītāju un tad saskaitīt decimālskaitli tik reizes, cik norāda veselais skaitlis.
+Visi prieki no šī koda darbības apsīka, kad es mēģināju reizināt decimālskaitļus. Ja viens no tiem ir vesels skaitlis, tad nav problēmu, jo varam skaitīt decimālskaitli ar sevi tik reizes, cik norāda veselais skaitlis.
 
 Reizināšana ar diviem decimālskaitļiem tā nevar notikt.
 
-Vienīgais jēdzīgais risinājums ir abus skaitļus reizināt ar palielu skaitļa 10 kāpinājumu, tad reizināt šos skaitļus ar ciklu un tad reizināt rezultātu ar 10 negatīvā pakāpē, kas atgriež abus skaitļus atpakaļ decimālskaitļu reģionā.
+Vienīgais jēdzīgais risinājums ir abus skaitļus reizināt ar skaitļa 10 pakāpi, tad reizināt šos skaitļus tāpat kā iepriekš, un tad reizināt rezultātu ar 10 negatīvu pakāpi, kas atgriež abus skaitļus atpakaļ decimālskaitļos.
 
-Viss lieliski, bet šis risinājums ir ārkārtīgi lēns. Es nevienā brīdī necerēju, ka jebkas no šī būs ātrdarbīgs, bet vairākas sekundes vai pat minūtes lai sareizinātu divus skaitļus ir nedaudz par traku.
+Viss lieliski, bet šis risinājums ir ārkārtīgi lēns. Es nevienā brīdī necerēju, ka jebkas no šī būs ātrdarbīgs, bet vairākas sekundes vai minūtes lai sareizinātu divus skaitļus ir nedaudz par traku.
 
 Reizināšanas funkcija atrodas atsevišķā MA makro skriptā, lai to varētu izmantot atkārtoti, gluži kā funkciju. Bet, kad šī funkcija tiek izsaukta, pamata skripts negaida, kad tā pabeigs izpildi, kā tas notiktu parastā sinhronā programmas izpildē, tāpēc ir jāieliek aizkaves, kas sagaida reizināšanas rezultātu. Protams varētu izveidot kaut kādu gaidīšanas ciklu, bet pagaidām nesarežģīsim.
 
