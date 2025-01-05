@@ -1,7 +1,7 @@
 ---
 author: Mārcis
 pubDatetime: 2025-01-06
-title: "Apollo navigācijas datora programmēšana ar Priedi"
+title: "Apollo navigācijas datora programmēšana ar manu programmēšanas valodu"
 featured: true
 draft: false
 tags:
