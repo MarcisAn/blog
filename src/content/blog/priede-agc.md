@@ -7,7 +7,7 @@ draft: false
 tags:
   - priede
   - AGC
-description: "TODO"
+description: "Priedes kompilēšana 60 gadus vecam datoram"
 ---
 
 Iepazīstieties, Apollo navigācijas dators.
