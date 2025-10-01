@@ -232,7 +232,7 @@ Bet interesanta ir pirmā instrukcija, jo tā maina otro instrukciju izpildlaik�
 
 Ja `A` reģistrā būs skaitlis `2`, tad otrā instrukcija nolasīs skaitli `3`, jo tas atrodas divas adreses tālāk atmiņā.
 
-# Kompilēšanaaaaaaaaaa
+# Kompilēšana
 
 Sākumā uzreiz būtu jāpasaka, ka turpmākais variants nav efektīvs vai ātrs. Tas ir skaidrs jau paskatoties uz ģenerēto mašīnkodu. Pagaidām man vēl ir pārliecība, ka to varēs optimizēt vēlāk.
 
@@ -244,7 +244,7 @@ Ar konstantēm būtu saprotami dati, kas ir ierakstīti kodā ar roku un ir zin�
 
 Iepriekšējās Priedes implementācijās konstantes atradās baitkodā pa taisno. AGC mašīnkodam nepieciešams visus datus definēt iepriekš. Te nekā pārāk interesanta nav. Kompilācijas laikā, sastopot konstanti, saglabājam to un beigās visas sadrukājam mašīnkodā.
 
-## HAHA Reģistru mašīna
+## Reģistru mašīna
 
 Oriģinālā [Priede](https://github.com/MarcisAn/priede) izmanto steku, lai darbotos ar datiem.
 Mans [Priedes kompilators priekš grandMA komandrindiņas](https://blog.andersons-m.lv/posts/ma-macro-compiler) izmanto virtuāla procesora "reģistrus". Tas ir stipri vienkāršāk. Izpildlaikā jāstrādā tikai ar datu masīvu - čupu ar mainīgajiem.
