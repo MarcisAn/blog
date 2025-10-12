@@ -1,6 +1,5 @@
 ---
 import Breadcrumbs from "@components/Breadcrumbs.astro";
-import { Databuddy } from "@databuddy/sdk/react";
 interface StringTitleProp {
   pageTitle: string;
   pageDesc?: string;
@@ -33,19 +32,6 @@ const { props } = Astro;
   }
   <p>{props.pageDesc}</p>
   <slot />
-  <Databuddy
-    clientId="LH9A7Hu08UtEAXc-K7KWl"
-    trackAttributes={true}
-    trackOutgoingLinks={true}
-    trackInteractions={true}
-    trackEngagement={true}
-    trackScrollDepth={true}
-    trackExitIntent={true}
-    trackBounceRate={true}
-    trackWebVitals={true}
-    trackErrors={true}
-    enableBatching={true}
-  />
 </main>
 
 <style>
