@@ -16,7 +16,6 @@ export default defineConfig({
   },
   vite: {
     optimizeDeps: { exclude: ["@resvg/resvg-js"] },
-    build: { rollupOptions: { external: [/^node:.*/, "posthog-js"] } },
   },
   scopedStyleStrategy: "where",
 });
