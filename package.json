@@ -23,6 +23,7 @@
     "astro": "^4.1.1",
     "fuse.js": "^7.0.0",
     "github-slugger": "^2.0.0",
+    "posthog-js": "^1.275.1",
     "remark-collapse": "^0.1.2",
     "remark-toc": "^9.0.0",
     "satori": "^0.10.11",
