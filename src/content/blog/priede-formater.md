@@ -5,13 +5,13 @@ title: "Priedes koda automātiska formatēšana"
 featured: true
 tags:
   - priede
-description: "Automātisksā koda formatēšana manā programmēšanas valodā"
+description: "Automātisksā koda formatēšana Priedē"
 ---
 
 
 Priedes kodam neesmu pieskāries jau vairākus mēnešus, bet tagad atkal pieķēros pie tā. Kopējā situācija nav spīdoša. Pats Priedes interpretators darbojās, toties pārējā infrastruktūra nav labākajā formā. Tagad vajadzētu atbrīvoties no visa puspabeigtā un sakoncentrēties uz svarīgajām lietām.
 
-... Tāpēc es izdomāju iesākt vēl vienu projektiņu - automātisko formatētāju.
+... Tāpēc es izdomāju iesākt vēl vienu puspabeigtu projektiņu - automātisko formatētāju.
 
 
 ## Satura rādītājs
