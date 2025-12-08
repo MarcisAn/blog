@@ -379,7 +379,6 @@ kamēr y_level >= 11 {
 src="/assets/ma-macro/tetris.mp4">
 </video>
 
-Ja video nedarbojas, var pārlādēt lapu.
 
 ![Tetris](/assets/ma-macro/tetris.png)
 

@@ -2,7 +2,7 @@
 author: Mārcis
 pubDatetime: 2025-06-01
 title: "Priedes koda automātiska formatēšana"
-featured: true
+featured: false
 tags:
   - priede
 description: "Automātisksā koda formatēšana Priedē"
