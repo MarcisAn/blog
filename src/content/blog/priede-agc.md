@@ -33,10 +33,9 @@ Sešdesmitajos gados, kad NASA gatavojās nolaisties uz mēness, viņi juta nepi
 - Patērē ap 55 vatus
 - Procesors darbojās 1 megaherca frekvencē - 600 reizes lēnāks, kā pirmais iPhone
 - Darbojās ar 4kB operatīvo atmiņu - 30 tūkstoš reizes mazāk, kā pirmajam iPhone
-- Satur arī 72kB programmas atmiņu, kas sastāv no vara stieplēm, kuras tika ar roku izšūtas. - Salīdzinājumi diezgan absurdi, jo mūsdienās tur varētu ietilpināt tikai īsu teksta dokumentu.
+- Satur arī 72kB programmas atmiņu, kas sastāv no vara stieplēm, kuras tika ar roku izšūtas.
 - Procesors darbojās ar 36 iespējamām instrukcijām
 
-Bet tomēr cilvēki nolaidās uz mēness ar šī datora palīdzību un tajā laikā tas bija nopietns tehnoloģiju brīnums.
 
 ## Par programmatūru
 
@@ -75,7 +74,7 @@ Rakstīt kodu priekš šī aparāta nav tik vienkārši, kā atvērt failu un ra
 
 Šim datoram ir 11 iespējami interupti (pārtraukuma signāli). Tie ir gadījumi, kad aparatūra datoram paziņo, ka ir noticis kaut kas tāds, kam vajag tūlītēju datora uzmanību. Tad dators pārtrauc pašreizējo darbību, saglabā tās stāvokli, apstrādā interuptu, tad atgriežas sākotnējā vietā.
 
-Ir nepieciešama [interuptu vekotoru tabula](https://en.wikipedia.org/wiki/Interrupt_vector_table) (vai kā arī to tulkotu...). Tā pasaka ko dators darīs, kad notiks kāds interupts. Citādi intrupta gadījumā dators sāks izpildīt kodu, kas nejauši patrāpīsies tajās atmiņas adresēs. Šī tabula nepeciešama `4000` prgrammas atmiņas adresē ([oktālajā skaitīšanas sistēmā](https://en.wikipedia.org/wiki/Octal)) un izskatās aptuveni tā:
+Ir nepieciešama [interuptu vekotoru tabula](https://en.wikipedia.org/wiki/Interrupt_vector_table). Tā pasaka, ko dators darīs, kad notiks kāds interupts. Ja šī tabula tur nebūs, intrupta gadījumā dators sāks izpildīt kodu, kas nejauši patrāpīsies tajās atmiņas adresēs. Šī tabula nepeciešama `4000` prgrammas atmiņas adresē oktālajā skaitīšanas sistēmā un izskatās aptuveni tā:
 
 Te ir tikai 5 interupti, bet pārējie izskatās tāpat. Es saīsināju.
 
@@ -112,15 +111,14 @@ STARTUP     # Programmas kods
 
 Pirmā instrukcija norāda asemblerim, ka turpmākais kods sākās adresē 4000 (oktālajā sistēmā).
 
-Tālāk seko interuptu apstrādātāji. Katram ir atvēlēti 4 vārdi programmas atmiņā. `STARTUP` interupts notiek tad, kad dators ieslēdzās. Te var redzēt, ka šis kods izsauc `STARTUP` rutīnu (funkciju), bet pārējie 3 vārdi ir tukši ar `NOOP` instrukciju.
+Tālāk seko interuptu apstrādātāji. Katram ir atvēlēti 4 vārdi programmas atmiņā. Pirmais interupts notiek tad, kad dators ieslēdzās. Te var redzēt, ka šis kods izsauc `STARTUP` rutīnu (funkciju) ar `TCF` instrukciju, bet pārējie 3 vārdi ir tukši ar `NOOP` instrukciju.
 
 Visi pārēji interupti ar `RESUME` norāda, ka jāturpina izpildīt iepriekšējais kods tā, it kā nekas nebūtu noticis. Interupti tiek ignorēti. Un tad arī nākamie 3 vārdi ir tukši.
 
-Bet tālāk seko vēl jautrība:
 
 ## GOJAMs
 
-Drošības nolūkos, AGC ir iebūvēts mehānisms, kas restartē datoru, ja gadās kāda šmuce ar programmatūru. Šo restartu sauc `GOJAM`. Piemēram:
+Drošības nolūkos, AGC ir iebūvēts mehānisms, kas restartē datoru, ja gadās kāda kļūda ar programmatūru. Piemēram:
 
 - Dators ir iestrēdzis bezgalīgā cilpā.
 
@@ -136,7 +134,7 @@ AGC saturēja primitīvu multi-taskinga sistēmu. 67 (oktālā) atmiņas adrese 
 
 Ja netiek izmantota multi-taskinga sistēma, tad nepieciešams šo mehānismu apmānīt, lai dators regulāri nerestartētos. Redz kā to izdarīt:
 
-Ir procesora reģistrs, kas tiek inkrementēts katras 10 milisekundes. Kad tas ir pārplūdis 15 bitu maksimālo vērtību, notiek interupts. Kad interupts notiek, varam pabakstīt šo adresi, lai novērstu restartu. Problēma, gan ka tas nenotiek pārāk bieži. Tāpēc šajā reģistrā ieliekam tādu vērtību, lai tas pārplūstu ātrāk. Tagad, katras 40 milisekundes notiks interupts, kas pabakstīs 67 adresi un novērsīs restartus.
+Ir procesora reģistrs, kas tiek palielināts katras 10 milisekundes. Kad tas ir pārplūdis 15 bitu maksimālo vērtību, notiek interupts. Kad interupts notiek, varam rakstīt/lasīt šo adresi, lai novērstu restartu. Problēma, gan ka tas nenotiek pārāk bieži. Tāpēc šajā reģistrā ieliekam tādu vērtību, lai tas pārplūstu ātrāk. Tagad, katras 40 milisekundes notiks interupts, kas rakstīs 67 adresi un novērsīs restartus.
 
 ## Perifērijas ierīces
 
@@ -161,7 +159,7 @@ Lai lidotu uz mēnesi vairāk jāsatraucas par:
 
 Pagaidām pieturēsimies tikai pie ekrāna un tastatūras, kas atradās Apollo kuģos. To sauc par DSKY - Display and Keyboard unit. (Izrunā "Diskij")
 
-Papildus galvenajai atmiņai, AGC bija 512 datu adreses - kanāli, kas paredzēti saziņai ar ārējām ierīcēm. No tiem var nolasīt datus, un tajos var ierakstīt datus. Tāpat kā galvenajā atmiņā, katrs ievades/izvades (IO) kanāls ir 15 bitus garš. Patiesībā ir 16 biti, bet viens no tiem ir paritātes bits, kas pārbauda vai dati nav aizgājuši neceļos, tāpēc reāli izmantojami ir 15 biti.
+Papildus galvenajai atmiņai, AGC bija 512 datu kanāli, kas paredzēti saziņai ar ārējām ierīcēm. No tiem var nolasīt datus, un tajos var ierakstīt datus. Tāpat kā galvenajā atmiņā, katrs ievades/izvades (IO) kanāls ir 15 bitus garš. Patiesībā ir 16 biti, bet viens no tiem ir paritātes bits, kas pārbauda, vai dati nav aizgājuši neceļos, tāpēc reāli izmantojami ir 15 biti.
 
 ## Skaitļu izvade uz DSKY
 

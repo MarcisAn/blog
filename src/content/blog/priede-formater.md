@@ -9,9 +9,9 @@ description: "Automātisksā koda formatēšana Priedē"
 ---
 
 
-Priedes kodam neesmu pieskāries jau vairākus mēnešus, bet tagad atkal pieķēros pie tā. Kopējā situācija nav spīdoša. Pats Priedes interpretators darbojās, toties pārējā infrastruktūra nav labākajā formā. Tagad vajadzētu atbrīvoties no visa puspabeigtā un sakoncentrēties uz svarīgajām lietām.
+Pēc pāris mēnešu pauzes atkal pieķēros pie Priedes koda. Kopējā situācija nav spīdoša. Pats Priedes interpretators darbojās, bet vairāki blakus projekti stāv puspabeigti.
 
-... Tāpēc es izdomāju iesākt vēl vienu puspabeigtu projektiņu - automātisko formatētāju.
+Tāpēc es izdomāju iesākt vēl vienu projektiņu - automātisko formatētāju.
 
 
 ## Satura rādītājs
@@ -35,7 +35,7 @@ ja (1 + 1 / 5 = 5) {
 }
 ```
 
-Kā izrādās, automātiskie formatētāji ir diezgan sarežģīti. Toties stipri varam to vienkāršot, ja netiek aplauztas koda līnijas.
+Kā izrādās, automātiskie formatētāji ir diezgan sarežģīti, bet stipri varam to vienkāršot, ja netiek aplauztas koda līnijas.
 
 <br>
 <br>
@@ -60,11 +60,11 @@ g + h + i + j + k + l + m {
 
 Priedes koda parseris šādu kodu saprot tāpat, kā pirmo variantu, bet tas ir vieglāk lasāms.
 
-Algoritms, lai atrastu vietas, kur aplauzt rindiņu ir diezgan interesants(skat. atsauces) un kādu dienu es gribētu to implementēt Priedei, bet šobrīd pieturēšos pie formatētāja, kas nepalauž rindiņas.
+Algoritms, lai atrastu vietas, kur aplauzt rindiņu ir diezgan interesants(skat. atsauces) un kādu dienu es gribētu to implementēt Priedei, bet šobrīd pieturēšos pie vienkāršā varianta.
 
-## Abstraktais sintakses koks (atkal)
+## Abstraktais sintakses koks
 
-Plāns šāds: kodu pārveidojam tādā formā, kas parāda koda uzbūvi, bet nesatur atstarpes un jaunas rindiņas. Tad pārveidojam to atpakaļ uz kodu, atbilstoši vēlmēm par formatējumu.
+Plāns ir saglabāt kodu tādā formā, kas saglabā visas rakstības nianses, bet nesatur atstarpes vai jaunas rindiņas.
 
 Priedes interpretators to jau dara un šo struktūru sauc par abstraktās sintakses koku. Nosaukums jau pasaka, ka tas nesatur informāciju par koda sintaksi un formatējumu. Tomēr Priedes ASK satur pietiekoši daudz informācijas, lai nonāktu atpakaļ pie koda. Vairāk par Priedes darbu ar ASK var palasīt iepriekšējos rakstos par Priedi, bet te kopsavilkums:
 
@@ -83,8 +83,6 @@ Rekursīvi izpildot darbības varam izpildīt kodu. To dara Priedes interpretato
 Un rekursīvi ejot cauri šim kokam varam arī sadrukāt kodu.
 
 ### Bloki
-
-Te arī sākās visas problēmas.
 
 Bloks ir Priedes koda sakne. Bloks var saturēt mainīgo deklarācijas, funkciju izsaukums, sazarojumus, ciklus utt.
 
@@ -141,7 +139,7 @@ izvade(1)
 izvade("Lai tev jauka diena!")
 ```
 
-Bibliotēka, ko izmantoju ASK ģenerēšanai piedāvā atgūt teksta rindiņu nummurus no ASK elementiem. Precīzāk sakot tiem elementiem, kuri pastāv tekstā, jo vairāku teksta elementu grupai nepiemīt reāla atrašanās vieta tekstā. Tāpēc izveidoju rekursīvu funkciju, kas atrod augstāko apakšelementu no ASK zara, kam ir pozīcija tekstā.
+Bibliotēka, ko izmantoju ASK ģenerēšanai piedāvā atgūt teksta rindiņu nummurus no ASK elementiem. Precīzāk sakot tiem elementiem, kuri pastāv tekstā, jo vairāku teksta elementu grupai nepiemīt reāla atrašanās vieta tekstā. Tāpēc izveidoju rekursīvu funkciju, kas atrod pirmo apakšelementu no ASK zara, kam ir pozīcija tekstā.
 
 Ja vēlamies ievērot tukšās rindiņas, tad varam pārbaudīt vai starp diviem blakus esošiem elementiem blokā ir vairāk kā viena rindiņa starpā
 
@@ -155,7 +153,7 @@ Kad nonākam pie otrā bloka elementa, tad varam redzēt, ka iepriekšējais ele
 
 <br>
 
-Ziepes sākās, kad bloka elementi ir vairāku rindiņu platumā.
+Bet bloka elementi var būt arī vairāku rindiņu platumā.
 
 ```
 izvade(1)
@@ -168,9 +166,9 @@ izvade(2)
 ```
 
 
-Šis `ja` sazarojums ir viens bloka elements. Ja izmantojam iepriekšējo metodi, tad starp apakšbloku un trešo izvades funkciju sanāktu 4 tukšas rindiņas, bet vispār ir tikai 1.
+Šis `ja` sazarojums ir viens bloka apakšelements. Ja izmantojam iepriekšējo metodi, tad starp apakšbloku un trešo izvades funkciju sanāktu 4 tukšas rindiņas, bet vispār ir tikai 1.
 
-Iepriekš minēto rekursīvo funkciju rindiņas noteikšanai var pārveidot, lai tā atrastu tālāko elementu, kas arī būtu viszemāk kodā (rindiņas nummura ziņā). Tomēr šajā gadījumā tas nestrādās, jo aizverošā figūriekava neietilps ASK. Tā parādās tikai tad, kad sazarojums ir jau formatēts.
+Iepriekš minēto rekursīvo funkciju rindiņas noteikšanai var pārveidot, lai tā atrastu tālāko elementu, kas arī būtu viszemāk kodā (rindiņas nummura ziņā). Tomēr šajā gadījumā tas nestrādās, jo aizverošā figūriekava neietilpst ASK. 
 
 To arī izmantosim. Rekursīvā funkcija formatēšanai tagad atgriež ne tikai formatēto kodu, bet arī rindiņu skaitu, kurās šis kods ietilpst. Šīs funkcijas daļa, kas apstrādā `ja` elementu aprēķina cik rindiņas tas aizņem.
 
@@ -181,8 +179,7 @@ Tātad
 - pieskaitām pie tās elementa platumu rindiņās
 - aprēķinām tukšās rindiņas ar nākamo elementu
 
-## Indentācija
-(atkāpju pievienošana)
+## Atkāpju pievienošana
 
 Šajā sakarā mūs atkal interesē bloki. Katram nākamajam blokam palielinām indentācijas līmeni.
 
@@ -205,7 +202,7 @@ ja 1 {
 }
 ```
 
-Tātad ir nepieciešams palielināt atkāpi tad, kad sākam drukāt jaunu bloku, bet samazināt, kad šis bloks ir cauri. Izņēmums ir programmas pamata bloks.
+Ir nepieciešams palielināt atkāpi tad, kad sākam drukāt jaunu bloku, bet samazināt, kad šis bloks ir cauri. Izņēmums ir programmas pamata bloks.
 
 Rekursīvajā funkcijā nēsājam līdzi arī uzstādījumus, piemēram:
 
@@ -214,4 +211,5 @@ Rekursīvajā funkcijā nēsājam līdzi arī uzstādījumus, piemēram:
 - utt.
 
 ## Atsauces
+
 [The Hardest Program I’ve Ever Written - Bob Nystrom](https://journal.stuffwithstuff.com/2015/09/08/the-hardest-program-ive-ever-written/#1-note)
