@@ -6,7 +6,7 @@ featured: true
 tags:
   - priede
 description: "TODO"
-draft: ture
+draft: true
 ---
 
 
