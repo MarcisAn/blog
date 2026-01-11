@@ -132,7 +132,7 @@ Visām šīm darbībām ar reģistriem nepieciešams zināt reģistra nummurus k
 
 Priedes kompilators kompilācijas laikā simulē steku ar datu tipiem. Nekādas darbības netiek veiktas, bet tikai tiek pārbaudīts vai datu tipi ir pareizi, ja šādas darbības tiktu veiktas izpildlaikā.
 
-Un te varētu darīt līdzīgi. Kompilācijas laikā simulējam steku, kas satur reģistru numurus. Tad kad būtu nepieciešams uz steka uzlikt jaunu vērtību (ja tāds būtu), tad šai vērtībai piešķiram jaunu reģistra numuru un uzliekam to uz simulētā kompilācijas steka. Tad, kad nepieciešams noņemt vērtību no steka (ja tāds būtu), tad noņemam augšu no simulētā steka un skatamies kāds tur ir reģistra numurs. Ar šo reģistru arī veicam darbību.
+Un te varētu darīt līdzīgi. Kompilācijas laikā simulējam steku, kas satur reģistru numurus. Tad kad būtu nepieciešams uz steka uzlikt jaunu vērtību (ja tāds būtu), tad šai vērtībai piešķiram jaunu reģistra numuru un uzliekam to uz simulētā kompilācijas steka. Tad, kad nepieciešams noņemt vērtību no steka (ja tāds būtu), tad noņemam augšu no simulētā steka un skatāmies kāds tur ir reģistra numurs. Ar šo reģistru arī veicam darbību.
 
 Iespējams vajadzēs arī kaut kā attīrīt vecos reģistrus, lai neieietu milzīgos skaitļos, bet par to pašlaik var neuztraukties. Operatīvā atmiņa jau netrūkst...
 
@@ -171,7 +171,7 @@ Ha ha
 
 Reizināšana, teorētiski ir saskaitīšana vairākas reizes. Ņemot vērā negatīvus skaitļus tas izskatās aptuveni šādi:
 
-```python
+```Python
 def multiply(a, b):
     result = 0
     is_negative = False

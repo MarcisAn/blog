@@ -30,7 +30,7 @@ Pirms ķerties klāt kodam, varētu paskatīties uz matemātiskām izteiksmēm, 
 
 Turpinot ar kodu...
 
-```python
+```Python
 a = 3-2
 print(1+2*a)
 ```
@@ -43,7 +43,7 @@ Te svarīgi norādīt, ka koks tiek apskatīts no kreisās puses, uz labo. Tas i
 
 Pirmais solis ir saprast kādi simboli veido kodu un kāda ir to nozīme tajā
 
-```python
+```Python
 a = 3-2
 print(1+2*a)
 ```
@@ -81,7 +81,7 @@ Lekseris sastāv no cikla, kas iet cauri kodam un veido augstāk minēto sarakst
 
 Izveidot lekseri, kas var saprast šādu izteiksmi, ir diezgan elementāri tāpēc, ka katrs tokens ir viena rakstzīme tekstā, tāpēc viss, kas vajadzīgs ir cikls, kas iet cauri tekstam un pārbauda kādai rakstzīmei tas uzdūries virsū.
 
-```python
+```Python
 input = "2+1*3"
 
 for character in input:
@@ -124,7 +124,7 @@ CIPARS 4
 
 Tas tāpēc, ka mūsu lekseris ir ļoti tuvredzīgs. Tas ierauga ciparu un uzreiz met ārā jaunu tokenu. Šajā piemērā, protams, ir iespēja šim sarakstam izskriet cauri vēlreiz un, ieraugot vairākus blakus esošus ciparus, savienot tos skaitlī, bet glītāk būtu šo problēmu atrisināt jau lekserī. Lai to izdarītu būtu vajadzība paskatīties kas seko pēc pašreizējā tokena.
 
-```python
+```Python
 input = "2+1*3"
 
 while True:

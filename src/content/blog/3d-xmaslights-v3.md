@@ -92,7 +92,7 @@ Ar šo metodi ir arī liels risks cilvēciskajām kļūdām, kas notika vairākk
 src="/assets/xmaslights/unity.webm">
 </video>
 
-Lampiņu 3D reprezentāciju uzbūvēju Unity'ā un tur arī veidoju animācijas. Lampiņu dati Unity'a reāllaikā tiek nosūtīti Raspberry Pi minidatoram caur SocketIO, kur tiek kontrolētas lampiņas.
+Lampiņu 3D reprezentāciju uzbūvēju Unity'ā un tur arī veidoju animācijas. Lampiņu dati Unity'a reāllaikā tiek nosūtīti Raspberry PI minidatoram caur SocketIO, kur tiek kontrolētas lampiņas.
 
 ### 2023
 
