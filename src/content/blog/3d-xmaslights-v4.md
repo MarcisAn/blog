@@ -12,8 +12,9 @@ description: "Eglītes lampiņas, kurām noteiktas 3D koordinātas"
 
 Pēc viena izlaista gada, atkal uzmeistaroju eglītes lampiņas ar telpā noteiktām koordinātām un 3D animācijām. Šogad ar pāris jauninājumiem.
 
-
-![](/assets/xmaslights4/eglite.gif)
+<video loop muted="muted"  controls plays-inline="true" class="border border-skin-line"
+src="\assets\xmaslights4\eglite.mp4">
+</video>
 
 Eglīti uzstādīju RTU DITEF fakultātes Studentu pašpārvaldes telpā. 
 
@@ -25,7 +26,9 @@ Iepriekš labi strādāja lampiņu koordinātu noteikšana ar kameru - tiek iede
 
 Šogad ideja ir līdzīga, bet kameras vietā ir projektors, kas projicē šauru līniju uz eglītes. Ar šo līniju vajag "trāpīt" pa ieslēgto lampiņu un tad koordinātu var nolasīt no šīs līnijas pozīcijas uz ekrāna.
 
-![Lampiņu koordinātu noteikšana ar projektoru](/assets/xmaslights4/calib.gif)
+<video loop muted="muted"  controls plays-inline="true" class="border border-skin-line"
+src="\assets\xmaslights4\calib.mp4">
+</video>
 
 <figcaption>Lampiņu koordinātu noteikšana ar projektoru</figcaption>
 
@@ -36,7 +39,9 @@ Brīžos, kad kāda lampiņa nav redzama no projektora atrašanās vietas, var a
 Tomēr šādi iegūtas koordinātas nebūs perfektas perspektīvas dēļ.
 
 
-![](/assets/xmaslights4/perspective.gif)
+<video loop muted="muted"  controls plays-inline="true" class="border border-skin-line"
+src="\assets\xmaslights4\perspective.mp4">
+</video>
 
 <figcaption>Šajā klipā ir redzams vizualizētājs lampiņām, kur lampiņas ir izvietotas pēc tām koordinātām, kur ir koriģēta perspektīvā, bet animācija ir ģenerēta pēc neprecīzajām koordinātām</figcaption>
 
