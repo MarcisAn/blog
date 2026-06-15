@@ -18,4 +18,7 @@ export default defineConfig({
     optimizeDeps: { exclude: ["@resvg/resvg-js"] },
   },
   scopedStyleStrategy: "where",
+  redirects: {
+    "/gaisma": "https://docs.google.com/presentation/d/1fY9dZWheB4D657w3i6dAbBax1PhMp5e8YHYKmkZ3MTM/edit?usp=sharing"
+  }
 });
