@@ -22,7 +22,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
   <Header />
   <main id="main-content">
     <section id="hero">
-      <h1>Mārcis blog</h1>
+      <h1>Mārča blogs</h1>
       <a
         target="_blank"
         href="/rss.xml"
@@ -43,7 +43,6 @@ const socialCount = SOCIALS.filter(social => social.active).length;
         // only display if at least one social link is enabled
         socialCount > 0 && (
           <div class="social-wrapper">
-            <div class="social-links">Githubs:</div>
             <Socials />
           </div>
         )
@@ -56,7 +55,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
       featuredPosts.length > 0 && (
         <>
           <section id="featured">
-            <h2>Forši raksti</h2>
+            <h2>Izcelti raksti</h2>
             <ul>
               {featuredPosts.map(({ data, slug }) => (
                 <Card
